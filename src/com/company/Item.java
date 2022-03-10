@@ -3,7 +3,7 @@ package com.company;
 public class Item {
     private String category;
     private String description;
-    private boolean available;
+    private boolean available = true;
     private int returnPolicy;
 
             // getters
@@ -12,7 +12,7 @@ public class Item {
     public boolean isAvailable() { return available; }
     public int getReturnPolicy() { return returnPolicy; }
             // setter
-    public void setAvailable(boolean isAvailable) { this.available != isAvailable }
+    public void setAvailable() { this.available = !available; }
 
     }
 

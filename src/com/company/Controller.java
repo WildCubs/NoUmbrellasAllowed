@@ -3,6 +3,11 @@ package com.company;
 public class Controller {
 
 
+
+    public void execute() {
+        UI.mainMenu();
+    }
+
 }
 
     /*
