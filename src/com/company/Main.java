@@ -14,6 +14,7 @@ public class Main {
         Item item4 = new Item("Tøj", "Pailletkjole");
         catalogue.addItem(item4);
 
-        //Controller.execute();
+        Controller run = new Controller();
+        run.execute();
     }
 }

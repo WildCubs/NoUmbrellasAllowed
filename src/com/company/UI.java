@@ -5,23 +5,28 @@ import java.util.Scanner;
 public class UI {
     private boolean isRunning = true;
     private Scanner keybdINput = new Scanner(System.in);
-    private Catalogue catalogue = new Catalogue();
+    private Catalogue catalogue = new Catalogue();              // is there a better way?
 
-    public int userPrompt() {
+    public int userPrompt() {                                   // main menu choice, reuseable for int input
         int input = keybdINput.nextInt();
         return input;
     }
-
+            // this is a setter, it shouldn't return anything
+            // BUT borrowOrReturn() needs to point to a something (parameter)
     public void articleStatusMenu() {
         System.out.println("Enter the item's name or catalogue number");
 
         try {
             int input = userPrompt();
-            catalogue.borrowOrReturnItem(catalogue.comChest.get(input));
+            Item found = catalogue.comChest.get(input);
+            catalogue.borrowOrReturnItem(found);
+
+
         } catch(Exception nameGiven) {
             String itemName = keybdINput.nextLine();
             Item found = catalogue.findItem(itemName);
             catalogue.borrowOrReturnItem(found);
+
             }
     } //else sout: Invalid }
 
@@ -30,7 +35,9 @@ public class UI {
         String category = keybdINput.nextLine();
         System.out.println("Enter identifier of item you are adding to the Community Chest?");
         String name = keybdINput.nextLine();
-        catalogue.addItem(category, name);
+        Item addition = new Item(category, name);
+        catalogue.addItem(addition);
+
     }
 
     public void mainMenu() {
