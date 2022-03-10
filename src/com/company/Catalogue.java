@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Catalogue {
 
-    private List<Item> comChest = new ArrayList<Item>();
+    public List<Item> comChest = new ArrayList<Item>();
 
-    public Item findItem(String category, String itemName) {
+    public Item findItem(String itemName) {
         for (int i = 0; i < (comChest.size()); i++) {                /// An ArrayList has .size() method, instead of .length
             String queryItem = (comChest.get(i).getDescription());
             if (queryItem.equals(itemName)) {
@@ -20,12 +20,12 @@ public class Catalogue {
     }
 
     public void addItem(String itemCategory, String itemName) {
-        Item articleToAdd = findItem(itemCategory, itemName);
+        Item articleToAdd = new Item(itemCategory, itemName);
         this.comChest.add(articleToAdd);
     }
 
     public void borrowOrReturnItem(Item found) {
-        found.setAvailable();
+        found.toggleAvailable();
     }
 
     public void getAvailableItems() {

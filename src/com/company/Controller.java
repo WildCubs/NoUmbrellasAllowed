@@ -2,10 +2,12 @@ package com.company;
 
 public class Controller {
 
+private UI test = new UI();
+private Catalogue catalogue = new Catalogue();
 
 
     public void execute() {
-        UI.mainMenu();
+        test.mainMenu();
     }
 
 }
