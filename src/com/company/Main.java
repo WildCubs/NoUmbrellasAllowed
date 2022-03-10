@@ -3,6 +3,9 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
+        Controller run = new Controller();
+        run.execute();
+
         Catalogue catalogue = new Catalogue();
 
         Item item1 = new Item("Sport", "Skateboard");
@@ -14,7 +17,6 @@ public class Main {
         Item item4 = new Item("Tøj", "Pailletkjole");
         catalogue.addItem(item4);
 
-        Controller run = new Controller();
-        run.execute();
+
     }
 }

@@ -11,12 +11,13 @@ public class Item {
     }
 
     // getters
+    public String getCategory() { return category; }
     public String getDescription() { return description; }
     public boolean isAvailable() { return available; }
             // setters
     public void toggleAvailable() { this.available = !available; }
 
     public void setCategory(String category) { this.category = category; }
-    public void setDescription(String itemName) {this.description = description; }
+    public void setDescription(String description) {this.description = description; }
     }
 

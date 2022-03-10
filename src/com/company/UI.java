@@ -13,8 +13,10 @@ public class UI {
     }
             // this is a setter, it shouldn't return anything
             // BUT borrowOrReturn() needs to point to a something (parameter)
+
     public void articleStatusMenu() {
         System.out.println("Enter the item's name or catalogue number");
+        System.out.println();
 
         try {
             int input = userPrompt();
@@ -33,11 +35,11 @@ public class UI {
     public void addPrompt() {
         System.out.println("Please enter item type:");
         String category = keybdINput.nextLine();
-        System.out.println("Enter identifier of item you are adding to the Community Chest?");
-        String name = keybdINput.nextLine();
-        Item addition = new Item(category, name);
+        keybdINput.nextLine();              // good old hack... doesn't seem to help much, here
+        System.out.println("Enter name of item to donate to the Community Chest:");
+        String description = keybdINput.nextLine();
+        Item addition = new Item(category, description);
         catalogue.addItem(addition);
-
     }
 
     public void mainMenu() {
@@ -54,13 +56,17 @@ public class UI {
             switch (input) {
                 case 1:
                     catalogue.getFullList();
+                    break;
                 case 2:
                     catalogue.getAvailableItems();
+                    break;
                 case 3:
                     addPrompt();
+                    break;
                 case 4:
                 case 5:
                     articleStatusMenu();
+                    break;
                 default :
                     System.out.println("Du foretog et ugyldigt valg.");
             }
