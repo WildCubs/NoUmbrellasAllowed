@@ -32,16 +32,21 @@ public class Catalogue {
         for (int i = 0; i < comChest.size(); i++) {
             if (comChest.get(i).isAvailable()) {    // if it's available, put in the array
                 Item temp = comChest.get(i);
-                int count = 0;
-                availableChest[count] = temp;       // move to next space in the new array
-                count++;
+                //int count = 0;
+                availableChest[i] = temp;       // move to next space in the new array
+                //count++;
             }
-            for (i = 0; i < availableChest.length; i++) {
-                System.out.println(availableChest[i].getCategory() + "  " + availableChest[i].getDescription());
+        }
+
+            for (int i = 0; i < availableChest.length; i++) {
+                if (availableChest[i] != null) {
+
+                    System.out.println(availableChest[i].getCategory() + "  " + availableChest[i].getDescription());
+                }
             }
             //System.out.println(Arrays.toString(availableChest));      // more nonsense
         }
-    }
+
 
     public void getFullList() {                    // Okay, nevermind, then...
         for (int i = 0; i < comChest.size(); i++) {

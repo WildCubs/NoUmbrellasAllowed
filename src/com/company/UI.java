@@ -25,6 +25,7 @@ public class UI {
 
 
         } catch(Exception nameGiven) {
+
             String itemName = keybdINput.nextLine();
             Item found = catalogue.findItem(itemName);
             catalogue.borrowOrReturnItem(found);
@@ -34,8 +35,8 @@ public class UI {
 
     public void addPrompt() {
         System.out.println("Please enter item type:");
-        String category = keybdINput.nextLine();
         keybdINput.nextLine();              // good old hack... doesn't seem to help much, here
+        String category = keybdINput.nextLine();
         System.out.println("Enter name of item to donate to the Community Chest:");
         String description = keybdINput.nextLine();
         Item addition = new Item(category, description);
